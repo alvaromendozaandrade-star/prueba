@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Drive Hub estilo Mac</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar glass">
+        <div class="window-controls" aria-hidden="true">
+          <span class="dot dot-red"></span>
+          <span class="dot dot-yellow"></span>
+          <span class="dot dot-green"></span>
+        </div>
+        <h1>Drive Hub</h1>
+      </header>
+
+      <section class="folders glass">
+        <h2>Carpetas compartidas</h2>
+        <p class="hint">
+          Configura tu API key y IDs de carpeta en <code>app.js</code>.
+        </p>
+        <div id="folderButtons" class="button-grid" aria-label="Carpetas"></div>
+      </section>
+
+      <section class="files glass">
+        <div class="files-header">
+          <h2 id="selectedFolderTitle">Selecciona una carpeta</h2>
+          <span id="status" class="status">Listo</span>
+        </div>
+        <ul id="fileList" class="file-list"></ul>
+      </section>
+
+      <section class="preview glass">
+        <h2>Vista previa / descarga</h2>
+        <div class="actions">
+          <a id="previewBtn" class="action-btn" href="#" target="_blank" rel="noopener noreferrer">Abrir vista previa</a>
+          <a id="downloadBtn" class="action-btn primary" href="#" target="_blank" rel="noopener noreferrer">Descargar archivo</a>
+        </div>
+        <iframe
+          id="viewer"
+          title="Visor de Google Drive"
+          loading="lazy"
+          referrerpolicy="no-referrer"
+        ></iframe>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
